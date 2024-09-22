@@ -1,39 +1,64 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+  This class represents an Address which implements Serializable.
+  It includes fields for street, postcode, and district, along with
+  methods to access and compare these fields.
  */
-package ProjectNo1;
 
-import java.io.*;
-public class Adress implements Serializable {
-    private String street;
+package ProjectNo1;
+import java.io.Serializable;
+
+public class Address implements Serializable { 
+
     private String postcode;
     private String district;
+    private String street;
 
-    public Adress(String st,String pc,String dist)
-    {
-        street=st;
-        postcode=pc;
-        district=dist;
+    
+     // Constructor to initialize the Address object.
+
+    public Address(String street, String postcode, String district) {
+        this.street = street;
+        this.postcode = postcode;
+        this.district = district;
     }
-    public boolean equals(Adress ad)
-    {
-        return this.street.equals(ad.street) && this.postcode.equals((ad.postcode)) && this.district.equals(ad.district);
+
+    
+    // Compares this Address object with another Address object to check equality.
+    
+    public boolean equals(Address otherAddress) {
+        return this.street.equals(otherAddress.street) &&
+               this.postcode.equals(otherAddress.postcode) &&
+               this.district.equals(otherAddress.district);
     }
-    public  String getRoad()
-    {
+
+    
+    //Gets the street name of the Address.
+    
+    public String getStreet() {  
         return street;
     }
-    public  String getPostcode()
-    {
+
+
+    //Gets the postcode of the Address.
+     
+    public String getPostcode() {
         return postcode;
     }
-    public  String getDistrict()
-    {
+
+
+    // Gets the district name of the Address.
+    
+    public String getDistrict() {
         return district;
     }
-//    public String toString()
-//    {
-//        return "Adress : " + "\n" + "        Road : " + street + "\n" + "        Postcode : " + postcode + "\n" + "        District : " + district + "\n";
-//    }
+
+
+    // Provides a string representation of the Address.
+     
+    // public String toString() {
+    //     return "Address: " + "\n" + 
+    //            "  Street: " + street + "\n" + 
+    //            "  Postcode: " + postcode + "\n" + 
+    //            "  District: " + district + "\n";
+    // }
 }
